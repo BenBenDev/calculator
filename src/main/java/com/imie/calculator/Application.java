@@ -20,6 +20,6 @@ public class Application {
 	  add.make (3);
 	  System.out.println(add.getValue());
 	  
-	  System.out.println('END');
+	  System.out.println("END");
 	}
 }
