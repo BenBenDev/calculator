@@ -1,1 +1,11 @@
-""
+.gradle/**
+build/**
+bin/**
+
+.idea/**
+
+.classpath
+.settings
+.project
+
+rsa-*
