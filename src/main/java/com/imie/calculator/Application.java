@@ -8,11 +8,11 @@ package com.imie.calculator;
  *
  */
 public class Application {
-
-	Application add = new Application();
 	
 	public static void main(String[] args) {
-	  Addition add  = new Addition(1);
+		int a=2; // useless ; just for test
+
+		Addition add  = new Addition(1);
 	  
 	  add.make (2);
 	  System.out.println(add.getValue());
