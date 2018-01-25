@@ -4,6 +4,7 @@ apply plugin: 'idea'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
 apply plugin: 'checkstyle'
+apply plugin: "jacoco"
 
 repositories {
   mavenCentral()
@@ -28,11 +29,23 @@ pmd {
   ignoreFailures = true
   pmdTest.enabled = false
   ruleSets = [
-    'java-basic',
-    'java-braces',
-    'java-clone',
-    'java-codesize',
-    'java-comments',
+   'java-basic',
+            'java-braces',
+            'java-clone',
+            'java-codesize',
+            'java-comments',
+            'java-controversial',
+            'java-coupling',
+            'java-design',
+            'java-empty',
+            'java-finalizers',
+            'java-imports',
+            'java-optimizations',
+            'java-strictexception',
+            'java-strings',
+            'java-typeresolution',
+            'java-unnecessary',
+            'java-unusedcode'
     ]
 }
 
@@ -70,3 +83,35 @@ task cpdMain(dependsOn: 'pmdMain') {
 }
 check.dependsOn cpdMain
 
+jacoco {
+    toolVersion = "0.7.9"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.5
+            }
+        }
+
+        rule {
+            enabled = false
+            element = 'CLASS'
+            includes = ['org.gradle.*']
+
+            limit {
+                counter = 'LINE'
+                value = 'TOTALCOUNT'
+                maximum = 0.3
+            }
+        }
+    }
+}
