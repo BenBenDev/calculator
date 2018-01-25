@@ -14,15 +14,16 @@ dependencies {
   testCompile 'junit:junit:4.12'
 }
 
-javadoc {
-    source = sourceSets.main.allJava
-    classpath = configurations.compile
-}
 
 findbugs {
   ignoreFailures = true
   findbugsTest.enabled = false
   effort = "max"
+}
+
+checkstyle {
+  ignoreFailures = true
+  checkstyleTest.enabled = false
 }
 
 pmd {
@@ -52,7 +53,6 @@ pmd {
 checkstyle {
   ignoreFailures = true
   findbugsTest.enabled = false
-  sourceSets = [project.sourceSets.main]
 }
 
 
@@ -85,33 +85,4 @@ check.dependsOn cpdMain
 
 jacoco {
     toolVersion = "0.7.9"
-    reportsDir = file("$buildDir/customJacocoReportDir")
-}
-jacocoTestReport {
-    reports {
-        xml.enabled false
-        csv.enabled false
-        html.destination file("${buildDir}/jacocoHtml")
-    }
-}
-jacocoTestCoverageVerification {
-    violationRules {
-        rule {
-            limit {
-                minimum = 0.5
-            }
-        }
-
-        rule {
-            enabled = false
-            element = 'CLASS'
-            includes = ['org.gradle.*']
-
-            limit {
-                counter = 'LINE'
-                value = 'TOTALCOUNT'
-                maximum = 0.3
-            }
-        }
-    }
 }
