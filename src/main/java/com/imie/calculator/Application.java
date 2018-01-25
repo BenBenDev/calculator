@@ -10,7 +10,7 @@ package com.imie.calculator;
 public class Application {
 
     /**
-     * main application
+     * This is the main application.
      */
     public static void main() {
 
