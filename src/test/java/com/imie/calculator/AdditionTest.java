@@ -52,9 +52,10 @@ public class AdditionTest {
 	 */
 	@Test
 	public void testAddition() {
-		Assert.assertNotNull(add);
+		
 		
 		Addition add = new Addition(1);
+		Assert.assertNotNull(add);
 		Assert.assertEquals(1, add.value);
 	}
 
@@ -75,9 +76,10 @@ public class AdditionTest {
 	 */
 	@Test
 	public void testGetValue() {
-		Assert.assertNotNull(add);
+
 		
 		Addition add = new Addition(1);
+		Assert.assertNotNull(add);
 		Assert.assertEquals(1, add.getValue());
 	}
 
