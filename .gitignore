@@ -7,5 +7,3 @@ bin/**
 .classpath
 .settings
 .project
-
-rsa-*

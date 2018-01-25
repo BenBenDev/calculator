@@ -76,7 +76,6 @@ public class AdditionTest {
 	 */
 	@Test
 	public void testGetValue() {
-
 		
 		Addition add = new Addition(1);
 		Assert.assertNotNull(add);
