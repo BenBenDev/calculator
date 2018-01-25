@@ -12,10 +12,6 @@ dependencies {
   testCompile 'junit:junit:4.12'
 }
 
-test {
-	ignoreFailures = true
-}
-
 findbugs {
 	ignoreFailures = true
 	findbugsTest.enabled = false
@@ -28,8 +24,8 @@ pmd {
 	ruleSets = [
 		'java-basic',
 		'java-braces',
-		'java.clone',
-		'java.codesize',
-		'java.comments',
+		'java-clone',
+		'java-codesize',
+		'java-comments',
 		]
 }
