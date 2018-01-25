@@ -14,7 +14,7 @@ public class Application {
      */
     public static void main() {
 
-        Addition add = new Addition(1);
+        final Addition add = new Addition(1);
 
         add.make(2);
         System.out.println(add.getValue());

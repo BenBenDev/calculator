@@ -7,20 +7,22 @@ package com.imie.calculator;
  * @author BenBen
  */
 public class Addition {
-
-    protected int value = 0;
+/**
+ * Declares the used initial value and set to 0.
+ */
+    protected int value;
 /**
  * sets the initial value.
  * @param a
  */
-    public Addition(int a) {
+    public Addition(final int a) {
         this.value = a;
     }
     /**
      * add b to initial value.
      * @param b
      */
-    public void make(int b) {
+    public void make(final int b) {
         this.value += b;
     }
     /**
